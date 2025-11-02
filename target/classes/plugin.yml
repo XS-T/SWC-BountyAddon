@@ -1,0 +1,10 @@
+name: TemplatePlugin
+version: '0.0.2'
+main: org.crewco.template.Startup
+description: "A Template Plugin for 1.7.10"
+author: "XST99"
+
+commands:
+  reloadconfig:
+    description: Reload recipes command
+    usage: /reloadconfig

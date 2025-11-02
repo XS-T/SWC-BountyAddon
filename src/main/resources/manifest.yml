@@ -1,0 +1,15 @@
+# Addon manifest file
+name: Bounty Addon
+version: 0.0.2
+main: org.crewco.bounty.BountyAddon
+author: XST99
+description: A Bounty Addon for the SWC Core Plugin
+
+# Depends on other plugins
+plugin-dependencies:
+  - Vault
+
+#dependencies:
+#  - other-addon-id
+
+website: https://crewco.org/addons
