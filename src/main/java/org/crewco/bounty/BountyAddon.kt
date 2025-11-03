@@ -15,8 +15,7 @@ import org.crewco.swccore.Startup
 import org.crewco.swccore.api.addon.AddonConfig
 
 /**
- * Example addon implementation.
- * This shows how to create an addon for your plugin.
+ * Bounty addon implementation.
  */
 class BountyAddon(plugin: Plugin) : AbstractAddon(plugin) {
 
@@ -40,10 +39,6 @@ class BountyAddon(plugin: Plugin) : AbstractAddon(plugin) {
         config = AddonConfig(this)
         sysMsg = ChatColor.translateAlternateColorCodes('&',"&7[&cBounty&7]>")
         config.load()
-
-        if (!hasPluginDependency(this.plugin,"Vault")) {
-            logWarning("Vault not found - some features disabled")
-        }
 
         bountyManager = BountyManager(config)
         bountyManager.loadAndScheduleExpiryTasks()
@@ -71,9 +66,7 @@ class BountyAddon(plugin: Plugin) : AbstractAddon(plugin) {
 
         // Register all listeners in one call
         logInfo("Registering event listeners...")
-        registerEvents(
-            BoardListener(this),
-        )
+        registerEvents(BoardListener(this),)
         logInfo("Event listeners registered!")
 
         try {
@@ -115,11 +108,5 @@ class BountyAddon(plugin: Plugin) : AbstractAddon(plugin) {
         logInfo("Bounty addon has been reloaded!")
         config.reload()
         config.save()
-    }
-
-    // Example event handler
-    @EventHandler
-    fun onPlayerJoin(event: PlayerJoinEvent) {
-        event.player.sendMessage("§aWelcome! This message is from Example Addon.")
     }
 }
