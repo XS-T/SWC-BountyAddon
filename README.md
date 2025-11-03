@@ -47,3 +47,16 @@ swcb.admin.bounty.claim    ; Allows claiming bounties
 ---
 
 💀 **Hunt smart. Claim big. Survive the chase.** 💰
+
+---
+
+## 🔒 Setup
+
+```bash
+Drop the bounty-addon jar into the SWC-Core/Addons folder
+next run the commands as follows
+
+/addon load <jar>
+
+/addon enable bounty-addon
+```
